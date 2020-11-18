@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('layout/head.ejs') %>
+    <title>Document</title>
+</head>
+<body>
+    <%- include('layout/header.ejs') %>
+<% result.forEach(item=>{ %>
+    
+<section>
+    <form action="/house_name" , method="POST">
+        <img src="gryffindor.png" alt="">
+        <input class="button" type="submit" name="name" value = "<%= item %>">
+    </form>
+</section>
+
+<%}) %>
+
+
+
+</body>
+</html>

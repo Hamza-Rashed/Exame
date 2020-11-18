@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../layout/head.ejs') %>
+    <title>Document</title>
+</head>
+<body>
+    <%- include('../layout/header.ejs') %>
+<% result.forEach(item=>{ %>
+<section>
+    <img src="<%= item.image %>">
+    <h2><%= item.name %></h2>
+    <h2><%= item.patronus %></h2>
+    <h2><%= item.alive %></h2>
+<form action="/my_characters" method="POST">
+<input type="hidden" name="name" value="<%= item.name %>">
+<input type="hidden" name="patronus" value="<%= item.patronus %>">
+<input type="hidden" name="alive" value="<%= item.alive %>">
+<button type="submit" class="button">  Add To Favorate </button>
+</form>
+</section>
+<% }) %>
+
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <%- include('../../layout/header.ejs') %>
+    <% result.forEach(item=>{ %>
+        <section>
+            <form action="/update/<%= item.id %>" method="POST">
+                <input type="text" name="name" value="<%= item.name %>">
+                <input type="text" name="patronus" value="<%= item.patronus %>">
+                <select name="select">
+                    <option value="<%= item.alive %>"><%= item.alive %></option>
+                    <option value="alive">alive</option>
+                    <option value="dead">dead</option>
+                </select>
+                <button type="submit" class="button"> Update </button>
+            </form>
+
+            <form action="/delete/<%= item.id %>" method="POST">
+                <button type="submit" class="button"> Delete </button>
+            </form>
+        </section>
+        <% }) %>
+
+</body>
+</html>
